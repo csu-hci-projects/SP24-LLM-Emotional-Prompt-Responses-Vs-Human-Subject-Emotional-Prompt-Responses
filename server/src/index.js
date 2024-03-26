@@ -19,8 +19,10 @@ app.get('/', (req, res) => {
 app.post('/api/prompt', async (req, res) => {
 	console.log('got the prompt');
 	console.log(req.body);
-
-	fs.appendFileSync('src/responses.csv', `${data.participantId},${data.groupNumber},${data.trialNumber},${data.selectedPrompt}\n`);
+	
+	let csvString = req.body.participantId + ',' + req.body.groupNumber + ',' + req.body.trialNumber + ',\"' + req.body.selectedPrompt + '\"\n';
+	
+	fs.appendFileSync('src/responses.csv', csvString);
 	
 	if (req.body.groupNumber == 0) {
 		await openaiResponse(req, res);
@@ -34,7 +36,9 @@ app.post('/api/response', (req, res) => {
 	console.log('got the response');
 	console.log(req.body);
 	
-	fs.appendFileSync('src/responses.csv', `${req.body.participantId},${req.body.groupNumber},${req.body.trialNumber},${req.body.responseText},${req.body.perceivedTone}\n`);
+	let csvString = req.body.participantId + ',' + req.body.groupNumber + ',' + req.body.trialNumber + ',\"' + req.body.responseText + '\",' + req.body.perceivedTone + '\n';
+	
+	fs.appendFileSync('src/responses.csv', csvString);
 	
 	res.json({ message: 'Response received' });
 });

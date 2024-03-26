@@ -7,7 +7,7 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 
 async function openaiResponse(req, res) {
   const completion = await openai.chat.completions.create({
-    messages: [{"role": "system", "content": "You are a helpful assistant. You are assisting a user with a question and should respond in a helpful and concise manner using less than 150 words."},
+    messages: [{"role": "system", "content": "You are a helpful assistant. You are assisting a user with a question and should respond in a helpful and concise manner using less than 100 words."},
         {"role": "user", "content": req.body.selectedPrompt}],
     model: "gpt-3.5-turbo",
   });
@@ -27,7 +27,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 async function googleResponse(req, res) {
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-  const result = await model.generateContent("Answer the following question in less than 150 words: " + req.body.selectedPrompt);
+  const result = await model.generateContent("Answer the following question in less than 100 words: " + req.body.selectedPrompt);
   const response = await result.response;
   const text = response.text();
 
