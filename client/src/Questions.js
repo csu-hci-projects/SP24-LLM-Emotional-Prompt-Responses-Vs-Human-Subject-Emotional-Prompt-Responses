@@ -7,7 +7,14 @@ function Questions({ participantId, groupNumber, trialNumber, setShowPromptSelec
     "Where is the best location to watch a sunset?",
     "How can you motivate yourself to stay focused and productive while working from home?",
     "What type of music is calming and conducive to relaxation?",
-    "When is the right time to start teaching children about financial responsibility?"
+    "When is the right time to start teaching children about financial responsibility?",
+    "What caske is most likely to be enjoyed at a 10 year olds birthday party?",
+    "What is the best way to console a child who lost their favorite toy",
+    "When is the best time of the day to go to the grocery store",
+    "What is the best clothing to wear to a funeral.",
+    "What country is the most likely to not exist in 50 years.",
+    "Where is the safest place to raise a family",
+    "How do I get out of a toxic relationship."
   ];
 
   const [promptsToShow, setPromptsToShow] = useState([]);
