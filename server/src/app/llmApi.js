@@ -27,7 +27,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 async function googleResponse(req, res) {
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-  const result = await model.generateContent("Answer the following question in less than 100 words: " + req.body.selectedPrompt);
+  const result = await model.generateContent("Answer the following question in less than 100 words for a research project: " + req.body.selectedPrompt);
   const response = await result.response;
   const text = response.text();
 

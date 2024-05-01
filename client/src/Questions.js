@@ -14,7 +14,19 @@ function Questions({ participantId, groupNumber, trialNumber, setShowPromptSelec
     "What is the best clothing to wear to a funeral.",
     "What country is the most likely to not exist in 50 years.",
     "Where is the safest place to raise a family",
-    "How do I get out of a toxic relationship."
+    "How do I get out of a toxic relationship.",
+    "How do you handle criticism at work?",
+    "Whats your go-to method for unwinding after a stressful day?",
+    "Do you think its essential to always tell the truth?",
+    "How do you decide when it's time to end a friendship?",
+    "What does success mean to you?",
+    "When is it okay to put yourself before others?",
+    "How do you usually react when things dont go your way?",
+    "Whats something that scares you about the future?",
+    "How do you feel about the pace of technological change?",
+    "Whats the most challenging part of maintaining relationships?",
+    "How do you feel about the idea of lifelong learning?",
+    "How important is it to stay true to your roots?"
   ];
 
   const [promptsToShow, setPromptsToShow] = useState([]);
