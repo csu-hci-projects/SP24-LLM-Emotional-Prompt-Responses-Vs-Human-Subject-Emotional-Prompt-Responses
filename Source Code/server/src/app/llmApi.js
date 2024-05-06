@@ -1,4 +1,4 @@
-const OpenAI = require("openai");
+const OpenAI = require("openai/index.mjs");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 require('dotenv').config();
