@@ -36,7 +36,7 @@ app.post('/api/response', (req, res) => {
 	console.log('got the response');
 	console.log(req.body);
 	
-	let csvString = req.body.participantId + ',' + req.body.groupNumber + ',' + req.body.trialNumber + ',\"' + req.body.responseText + '\",' + req.body.perceivedTone + '\n';
+	let csvString = req.body.participantId + ',' + req.body.groupNumber + ',' + req.body.trialNumber + ',' + req.body.perceivedTone + '\n';
 	
 	fs.appendFileSync('src/responses.csv', csvString);
 	
